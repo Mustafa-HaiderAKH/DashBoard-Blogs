@@ -2,6 +2,7 @@ import { Button, Input, message } from "antd";
 import { useState } from "react";
 import { login } from "../pages/api/api";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Login = () => {
   const router = useRouter();
@@ -48,6 +49,14 @@ const Login = () => {
           >
             Login
           </Button>
+          <span className="text-register">
+            If you dont have account?
+            <span style={{ color: "blue" }}>
+              <Link href={"/register"}>
+                <a>Sign in</a>
+              </Link>
+            </span>
+          </span>
         </div>
       </div>
     </>

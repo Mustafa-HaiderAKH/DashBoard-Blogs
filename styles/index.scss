@@ -76,6 +76,9 @@ header {
   border: none;
   outline: none;
 }
+.Login-Form {
+  width: 400px;
+}
 .register-page {
   height: 100vh;
   width: 100%;
@@ -99,4 +102,13 @@ header {
     height: 41px;
     overflow: hidden;
   }
+}
+.ant-input-affix-wrapper > input.ant-input {
+  height: 13px;
+}
+.text-register {
+  display: block;
+  margin-top: 15px;
+  color: #758889;
+  font-size: 15px;
 }

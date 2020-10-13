@@ -3,12 +3,20 @@ const { Title, Text } = Typography;
 
 import { UserOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+
   const [userInfo, setUserInfo] = useState("");
   useEffect(() => {
     setUserInfo(JSON.parse(localStorage.getItem("blog_user")).name);
   }, []);
+  const SignOut = () => {
+    localStorage.removeItem("blog_user");
+    localStorage.removeItem("blog_token");
+    router.replace("/login");
+  };
 
   return (
     <>
@@ -27,7 +35,9 @@ const Header = () => {
                   <div className="user-setting">
                     <Button type="text">Change password</Button>
                     <br />
-                    <Button type="link">Sign Out</Button>
+                    <Button type="link" onClick={SignOut}>
+                      Sign Out
+                    </Button>
                   </div>
                 }
               >
